@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         if (!TextUtils.isEmpty(etBillAmount.getText().toString())) {
             tipPercentage = tipInputPercentage;
             tipTotal = Float.valueOf(etBillAmount.getText().toString()) * (tipPercentage / 100);
+            tipTotal = Math.round(tipTotal * 100f)/100f;                                            //Math.round to get 2-number precision
             finalBillAmount = Float.valueOf(etBillAmount.getText().toString()) + tipTotal;
             setTipValues();
         } else {
